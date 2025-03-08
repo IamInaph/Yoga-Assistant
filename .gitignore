@@ -1,0 +1,16 @@
+# Ignore virtual environment
+env/
+
+# Ignore any .pyc files
+*.pyc
+__pycache__/
+
+# Ignore Django database files
+*.sqlite3
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Make sure MP folder is not ignored
+!yoga_web/MP/
