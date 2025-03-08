@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+<!-- sp  -->
+{% load static %}
+<!-- sp  -->
+{% block title %}Yoga Poses{% endblock %}
+<!-- sp  -->
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'poses.css' %}" />
+{% endblock %} {% block content %}
+<section class="poses-section">
+  <div class="container">
+    <div class="poses-grid">
+      <div class="pose-card">
+        <img src="{% static 'cobra.jpg' %}" alt="Pose 1" />
+        <h3>Cobra Pose</h3>
+        <!-- Link to the start_pose.html page -->
+        <a href="{% url 'start_pose' %}" class="btn">View Pose</a>
+      </div>
+      <div class="pose-card">
+        <img src="{% static 'mountain.jpg' %}" alt="Pose 2" />
+        <h3>Mountain Pose</h3>
+        <a href="{% url 'start_pose' %}" class="btn">View Pose</a>
+      </div>
+      <div class="pose-card">
+        <img src="{% static 'tree.png' %}" alt="Pose 3" />
+        <h3>Tree Pose</h3>
+        <a href="{% url 'start_pose' %}" class="btn">View Pose</a>
+      </div>
+      <div class="pose-card">
+        <img src="{% static 'plankup.jpg' %}" alt="Pose 3" />
+        <h3>PlankUp Pose</h3>
+        <a href="{% url 'start_pose' %}" class="btn">View Pose</a>
+      </div>
+      <div class="pose-card">
+        <img src="{% static 'warrior.jpg' %}" alt="Pose 3" />
+        <h3>Warrior Pose</h3>
+        <a href="{% url 'start_pose' %}" class="btn">View Pose</a>
+      </div>
+      <div class="pose-card">
+        <img src="{% static 'downward_dog.jpg' %}" alt="Pose 3" />
+        <h3>DownwardDog Pose</h3>
+        <a href="{% url 'start_pose' %}" class="btn">View Pose</a>
+      </div>
+      <div class="pose-card">
+        <img src="{% static 'goddess.jpg' %}" alt="Pose 3" />
+        <h3>Goddess Pose</h3>
+        <a href="{% url 'start_pose' %}" class="btn">View Pose</a>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

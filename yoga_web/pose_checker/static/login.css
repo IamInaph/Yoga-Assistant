@@ -1,0 +1,99 @@
+/* Background container styling */
+body {
+  font-family: Arial, sans-serif;
+  background-image: url("/static/home.png");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Wrapper for login box */
+.login-box-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5); /* Dark overlay effect */
+  position: relative;
+  z-index: 10;
+}
+
+/* Login box (form container) */
+.login-box {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 400px;
+}
+
+/* Aligning form fields in the same line */
+.form-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  width: 30%;
+  text-align: left;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.form-group input {
+  width: 65%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Submit button */
+button {
+  width: 100%;
+  background: #007bff;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #0056b3;
+}
+
+/* Error message styling */
+.error-text {
+  color: red;
+  margin-top: 10px;
+}
+
+/* Success message styling */
+.success-text {
+  color: green;
+  margin-top: 10px;
+}
+
+/* Login text link */
+.login-text {
+  display: block;
+  text-align: center;
+  margin-top: 15px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .register-box {
+    width: 100%;
+    padding: 20px;
+  }
+}

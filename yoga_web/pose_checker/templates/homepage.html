@@ -1,0 +1,19 @@
+{% extends 'base.html' %} {% load static %} {% block title %}Home - Yoga
+Assistant{% endblock %} {% block extra_css %}
+<link rel="stylesheet" href="{% static 'homepage.css' %}" />
+{% endblock %} {% block content %}
+<section class="banner">
+  <img
+    src="{% static 'home.png' %}"
+    alt="Yoga Background"
+    class="banner-image"
+  />
+  <div class="overlay"></div>
+  <!-- For dark overlay effect -->
+  <div class="container">
+    <h1>Yoga Assistant</h1>
+    <p>Yoga - Your path to serenity</p>
+    <a href="{% url 'poses' %}" class="btn">Get Started</a>
+  </div>
+</section>
+{% endblock %}

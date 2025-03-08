@@ -1,0 +1,60 @@
+{% extends 'base.html' %} {% load static %}
+<!-- ADD THIS LINE AT THE TOP -->
+
+{% block title %}Start Yoga Session{% endblock %} {% block extra_css %}
+<link rel="stylesheet" href="{% static 'start_pose.css' %}" />
+{% endblock %} {% block content %}
+<div class="start-pose-container">
+  <h1>Welcome to the Yoga Session</h1>
+  <p>Click the button below to begin your yoga session.</p>
+
+  <div class="button-group">
+    <button id="start-yoga-button" class="btn btn-start">Start Yoga</button>
+    <button id="stop-yoga-button" class="btn btn-stop" style="display: none">
+      Stop Yoga
+    </button>
+  </div>
+
+  <div id="output" class="output-box"></div>
+</div>
+{% endblock %} {% block scripts %}
+<script>
+  $(document).ready(function () {
+    $("#start-yoga-button").click(function () {
+      $.ajax({
+        url: "{% url 'start_yoga' %}",
+        method: "POST",
+        headers: { "X-CSRFToken": "{{ csrf_token }}" },
+        success: function (response) {
+          if (response.status === "success") {
+            $("#output").html("<p>" + response.message + "</p>");
+            $("#start-yoga-button").hide();
+            $("#stop-yoga-button").show();
+          }
+        },
+        error: function () {
+          alert("An error occurred.");
+        },
+      });
+    });
+
+    $("#stop-yoga-button").click(function () {
+      $.ajax({
+        url: "{% url 'stop_yoga' %}",
+        method: "POST",
+        headers: { "X-CSRFToken": "{{ csrf_token }}" },
+        success: function (response) {
+          if (response.status === "success") {
+            $("#output").html("<p>" + response.message + "</p>");
+            $("#stop-yoga-button").hide();
+            $("#start-yoga-button").show();
+          }
+        },
+        error: function () {
+          alert("An error occurred.");
+        },
+      });
+    });
+  });
+</script>
+{% endblock %}
